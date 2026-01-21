@@ -1,57 +1,71 @@
-# חלומות מתוקים — Generative Engine Optimization Map
-
-> A ייצור ומכירת מזרנים business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### דף הבית
-https://-a14f878e.zappy5.app
+https://example.com
 רכשו מזרנים ישירות מהיצרן ללא תיווך. חלומות מתוקים מציעה מזרנים איכותיים במחיר מפעל עם משלוח חינם ואחריות מלאה.
 
-### מוצרים
-https://-a14f878e.zappy5.app/products
-עיינו במגוון המזרנים האיכותיים שלנו - אורתופדי, קצף זיכרון, היברידי ועוד. ייצור מזרנים ישירות מהיצרן במחירים הוגנים.
+### Products
+https://example.com/products
+המוצרים שלנו - חלומות מתוקים
 
 ### אודות
-https://-a14f878e.zappy5.app/about
+https://example.com/about
 למדו על חלומות מתוקים - יצרן מזרנים ישראלי המתמחה במכירה ישירה לצרכנים. ייצור מזרנים איכותיים במחיר מפעל ללא תיווך.
 
 ### צור קשר
-https://-a14f878e.zappy5.app/contact
+https://example.com/contact
 צרו קשר עם חלומות מתוקים לקבלת ייעוץ מקצועי והצעת מחיר למזרנים איכותיים. מכירה ישירה מהיצרן ללא תיווך.
+
+### Cart
+https://example.com/cart
+עגלת הקניות שלך
+
+### Checkout
+https://example.com/checkout
+תשלום
+
+### Login
+https://example.com/login
+התחברות לקוחות
+
+### Account
+https://example.com/account
+החשבון שלי
+
+### Order Success
+https://example.com/order-success
+תודה על ההזמנה
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - חלומות מתוקים
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://-a14f878e.zappy5.app/privacy
+https://example.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://-a14f878e.zappy5.app/terms
+https://example.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://-a14f878e.zappy5.app/accessibility
+https://example.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About חלומות מתוקים
-חלומות מתוקים is a business in the ייצור ומכירת מזרנים industry.
-
-## Target Audience
-קהל רחב
-
-## Industry
-ייצור ומכירת מזרנים
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://-a14f878e.zappy5.app/sitemap.xml
-- **Robots.txt**: https://-a14f878e.zappy5.app/robots.txt
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt

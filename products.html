@@ -1,9 +1,15 @@
-<!DOCTYPE html><html lang="he" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מוצרים</title>
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מגוון מזרנים איכותיים במחיר מפעל — חלומות מתוקים</title>
-<meta name="description" content="עיינו במגוון המזרנים האיכותיים שלנו - אורתופדי, קצף זיכרון, היברידי ועוד. ייצור מזרנים ישירות מהיצרן במחירים הוגנים.">
-<meta name="keywords" content="ייצור מזרנים, מזרנים במחיר מפעל ללא תיווך, מזרנים ישירות מהיצרן, חלומות מתוקים">
+
+
+<meta name="keywords" content="חלומות מתוקים, ייצור מזרנים, מזרנים במחיר מפעל ללא תיווך, מזרנים ישירות מהיצרן">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Favicons -->
@@ -66,6 +72,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- Zappy Analytics -->
 <script>
 (function() {
@@ -74,7 +82,7 @@
   // Configuration
   var config = {
     websiteId: 'a14f878e-a00f-4437-96f4-7eca17fa02d5',
-    apiUrl: 'https://qaapi.zappy5.com/api/analytics/track',
+    apiUrl: 'http://localhost:5001/api/analytics/track',
     sessionDuration: 30 * 60 * 1000, // 30 minutes
     visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
     trackPageViews: true,
@@ -313,17 +321,22 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
-<!-- Zappy Attribution Header -->
-<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
-  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
-</div>
-
-<nav class="navbar" id="navbar">
+  <script>window.ZAPPY_WEBSITE_ID = "a14f878e-a00f-4437-96f4-7eca17fa02d5";window.ZAPPY_API_BASE = "http://localhost:5001";</script>
+  
+    <div class="mobile-search-panel" id="mobile-search-panel">
+      <div class="search-wrapper">
+        <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+        <button class="close-search" id="close-mobile-search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="search-results" id="mobile-search-results"></div>
+    </div>
+  <nav class="navbar" id="navbar">
   <div class="container nav-container">
     <div class="nav-brand">
       <a href="/" class="logo-link">
-        <img src="/assets/business-logo.webp" alt="חלומות מתוקים" class="logo">
+        <img src="/assets/business-logo.webp" alt="חלומות מתוקים" class="logo" />
       </a>
     </div>
     
@@ -343,257 +356,57 @@
     </button>
     
     <ul class="nav-menu" id="navMenu">
-      <li><a href="/products">מוצרים</a></li>
+      
+    <li class="menu-item-has-children zappy-products-dropdown">
+      <a href="/products">
+        מוצרים
+        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </a>
+      <ul class="sub-menu" id="zappy-nav-category-links">
+        <li><a href="/products">כל המוצרים</a></li>
+        <!-- Categories will be loaded dynamically -->
+      </ul>
+    </li>
+  
       <li><a href="/about">אודות</a></li>
-    </ul>
+    <li><a href="/contact">צור קשר</a></li></ul><div class="nav-ecommerce-icons nav-icons-left"><a href="/login" class="login-link nav-login" title="התחברות"><svg class="login-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a><a href="#cart" class="cart-link nav-cart" id="cart-drawer-toggle" title="עגלת קניות"><svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count">0</span></a><div class="nav-search-box">
+    <input type="text" class="nav-search-input" id="nav-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+    <button class="nav-search-btn" id="nav-search-btn" title="חיפוש">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <div class="nav-search-results" id="nav-search-results"></div>
+  </div></div><div class="nav-ecommerce-icons nav-icons-right"><button class="nav-search-toggle" id="mobile-search-toggle" title="חיפוש"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button></div>
     
-    <div class="nav-cta-container">
-      <li class="nav-cta-item">
-        <a href="/contact" class="nav-cta-btn">צור קשר</a>
-      </li>
-    </div>
+    
   </div>
 </nav>
-
-<section class="page-header">
-  <div class="container">
-    <h1>המוצרים שלנו - מזרנים איכותיים במחיר מפעל</h1>
-    <h3>מגוון רחב של מזרנים לכל צורך ותקציב, ישירות מהיצרן ללא תיווך</h3>
-  </div>
-</section>
-
-<section class="section service-section" id="מזרן-אורתופדי-פרימיום" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
+<nav class="zappy-catalog-menu rtl" id="zappy-catalog-menu" dir="rtl">
+      <div class="catalog-menu-container">
+        <a href="/products" class="catalog-menu-item catalog-menu-all">כל המוצרים</a>
+        <div class="catalog-menu-categories" id="zappy-category-links">
+          <!-- Categories will be loaded dynamically -->
+        </div>
+      </div>
+    </nav>
+  <main class="page-container ecommerce-page">
+    
+        <section class="products-section">
+          <h1>המוצרים שלנו</h1>
+          <div class="product-filters">
+            <button class="filter-btn active" data-category="all">הכל</button>
+            <button class="filter-btn" data-category="featured">מומלצים</button>
+            <button class="filter-btn" data-category="new">חדשים</button>
+            <button class="filter-btn" data-category="sale">מבצעים</button>
+          </div>
+          <div class="product-grid" id="zappy-product-grid">
+            <div class="loading-products">טוען מוצרים...</div>
+          </div>
+        </section>
       
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-1" data-context="Premium orthopedic mattress with visible supportive layers and memory foam top, professional product photography on white background" src="/assets/service-service-1.webp" alt="מזרן אורתופדי פרימיום" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן אורתופדי פרימיום</h3>
-            <p>מזרן אורתופדי מתקדם עם 7 שכבות תמיכה, כולל קצף זיכרון איכותי ומערכת קפיצים כיסיים. מספק תמיכה מושלמת לעמוד השדרה ומפחית לחצים.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> 7 שכבות תמיכה</li>
-              <li><i class="fas fa-check"></i> קצף זיכרון איכותי</li>
-              <li><i class="fas fa-check"></i> אחריות 10 שנים</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-אורתופדי-קלאסי" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-2" data-context="Medium-firm orthopedic mattress showing supportive core and comfort layers, side angle product shot" src="/assets/service-service-2.webp" alt="מזרן אורתופדי קלאסי" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן אורתופדי קלאסי</h3>
-            <p>מזרן אורתופדי בעל קשיות בינונית, מתאים למגוון רחב של ישנים. מציע איזון מושלם בין תמיכה ונוחות במחיר אטרקטיבי.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> קשיות בינונית</li>
-              <li><i class="fas fa-check"></i> מחיר משתלם</li>
-              <li><i class="fas fa-check"></i> משלוח חינם</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-קצף-זיכרון-פרימיום" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-3" data-context="Luxurious memory foam mattress with gel-infused top layer, close-up showing soft plush texture" src="/assets/service-service-3.webp" alt="מזרן קצף זיכרון פרימיום" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן קצף זיכרון פרימיום</h3>
-            <p>מזרן קצף זיכרון משולב ג'ל המסייע בפיזור חום ושומר על טמפרטורה נעימה. מתאים במיוחד לישנים החמים או למי שמחפש נוחות מקסימלית.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> טכנולוגיית ג'ל</li>
-              <li><i class="fas fa-check"></i> פיזור חום מתקדם</li>
-              <li><i class="fas fa-check"></i> כיסוי נשלף וניתן לכביסה</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-קצף-זיכרון-קלאסי" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-4" data-context="Classic memory foam mattress showing multiple comfort layers, professional studio photography" src="/assets/service-service-4.webp" alt="מזרן קצף זיכרון קלאסי" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן קצף זיכרון קלאסי</h3>
-            <p>מזרן קצף זיכרון איכותי בעל 3 שכבות נוחות. מציע תמיכה מצוינת במחיר הוגן, מושלם למי שמחפש איכות ללא פשרות.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> 3 שכבות נוחות</li>
-              <li><i class="fas fa-check"></i> יחס מחיר-ערך מעולה</li>
-              <li><i class="fas fa-check"></i> אחריות 8 שנים</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-היברידי-פרימיום" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-5" data-context="Hybrid mattress cross-section showing pocket springs and memory foam layers combined, detailed product photography" src="/assets/service-service-5.webp" alt="מזרן היברידי פרימיום" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן היברידי פרימיום</h3>
-            <p>מזרן היברידי מתקדם עם 1000 קפיצים כיסיים ושכבות קצף זיכרון איכותיות. מציע תמיכה מקסימלית ונוחות יוצאת דופן.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> 1000 קפיצים כיסיים</li>
-              <li><i class="fas fa-check"></i> שכבות קצף זיכרון</li>
-              <li><i class="fas fa-check"></i> תמיכה מתקדמת</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-היברידי-קלאסי" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-6" data-context="Modern hybrid mattress with balanced support system, photographed from angle showing layers" src="/assets/service-service-6.webp" alt="מזרן היברידי קלאסי" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן היברידי קלאסי</h3>
-            <p>מזרן היברידי איכותי המשלב קפיצים כיסיים עם קצף נוחות. אופציה מצוינת במחיר משתלם למי שמחפש איזון מושלם.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> שילוב קפיצים וקצף</li>
-              <li><i class="fas fa-check"></i> מחיר אטרקטיבי</li>
-              <li><i class="fas fa-check"></i> אחריות 10 שנים</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-לילדים" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-7" data-context="Children's mattress with colorful design and supportive layers, photographed in bright cheerful setting" src="/assets/service-service-7.webp" alt="מזרן לילדים" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן לילדים</h3>
-            <p>מזרן מיוחד לילדים עם תמיכה מתאימה לגיל הרך. עשוי מחומרים היפואלרגניים ובטוחים לחלוטין לילדים.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> חומרים היפואלרגניים</li>
-              <li><i class="fas fa-check"></i> תמיכה מותאמת</li>
-              <li><i class="fas fa-check"></i> בטיחות מלאה</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-לנוער" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-8" data-context="Youth mattress with modern design and medium-firm support, clean product photography" src="/assets/service-service-8.webp" alt="מזרן לנוער" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן לנוער</h3>
-            <p>מזרן איכותי המתאים לגילאי נוער עם תמיכה מתקדמת לעמוד השדרה המתפתח. מציע נוחות ותמיכה לשנים רבות.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> תמיכה לעמוד שדרה</li>
-              <li><i class="fas fa-check"></i> עמידות גבוהה</li>
-              <li><i class="fas fa-check"></i> מחיר משתלם</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-רפואי" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-9" data-context="Medical-grade mattress with pressure relief zones and therapeutic features, professional healthcare setting" src="/assets/service-service-9.webp" alt="מזרן רפואי" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן רפואי</h3>
-            <p>מזרן רפואי מתקדם המיועד לאנשים עם צרכים רפואיים מיוחדים. כולל אזורי תמיכה מותאמים והקלה על נקודות לחץ.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> אישור רפואי</li>
-              <li><i class="fas fa-check"></i> אזורי תמיכה</li>
-              <li><i class="fas fa-check"></i> הקלה על כאבים</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-<section class="section service-section" id="מזרן-זוגי-מפוצל" data-zappy-section="true">
-  <div class="container">
-    <div class="product-card">
-      
-          <div class="product-img-wrapper">
-            <img data-placeholder="service-10" data-context="Split king mattress showing dual firmness zones for couples, modern bedroom photography" src="/assets/service-service-10.webp" alt="מזרן זוגי מפוצל" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3>מזרן זוגי מפוצל</h3>
-            <p>מזרן זוגי ייחודי עם שתי רמות קשיות שונות, מושלם לזוגות עם העדפות שינה שונות. כל צד מותאם אישית.</p>
-            <ul class="product-features">
-              <li><i class="fas fa-check"></i> שתי רמות קשיות</li>
-              <li><i class="fas fa-check"></i> התאמה אישית</li>
-              <li><i class="fas fa-check"></i> פתרון מושלם לזוגות</li>
-            </ul>
-          </div>
-        
-    </div>
-  </div>
-</section>
-
-<section class="why-direct">
-  <div class="container">
-    <h2>למה לקנות ישירות מהיצרן?</h2>
-    <div class="text-content">
-      <p>כשאתם קונים מזרן מחלומות מתוקים, אתם קונים ישירות מהיצרן ללא פערי תיווך מיותרים. המשמעות היא שאתם משלמים רק עבור המוצר עצמו, ללא עלויות נוספות של חנויות רשת, מתווכים או מפיצים.</p>
-      
-      <p>תהליך הייצור שלנו מתבצע במפעל המתקדם שלנו בישראל, תוך שימוש בחומרי גלם איכוtiים ובטכנולוגיות ייצור מתקדמות. כל מזרן עובר בדיקות איכות קפדניות לפני שהוא יוצא מהמפעל, ואנחנו עומדים מאחורי כל מוצר עם אחריות מלאה.</p>
-      
-      <p>הלקוחות שלנו נהנים מחיסכון של 30-40% בממוצע בהשוואה למחירי חנויות רשת, תוך שהם מקבלים את אותה איכות ואף יותר. בנוסף, אנחנו מציעים משלוח חינם לכל הארץ והרכבה מקצועית ללא עלות נוספת.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container">
-    <h2>מעוניינים לקבל הצעת מחיר?</h2>
-    <h3>צרו קשר עכשיו ונשמח לייעץ ולהציע את המזרן המתאים ביותר עבורכם</h3>
-    <div class="cta-buttons">
-      <a href="/contact" class="btn-cta">צרו קשר</a>
-      <a href="tel:[business_phone]" class="btn-secondary">התקשרו: [business_phone]</a>
-    </div>
-  </div>
-</section>
-
-<a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-
-    <!-- Legal Footer -->
-    <footer class="legal-footer">
+  </main>
+  <footer class="legal-footer">
       <div class="container">
         <div class="footer-main">
           <div class="all-rights-reserved">
@@ -613,6 +426,9 @@
             <span class="separator">|</span>
             <a href="/terms" aria-label="תנאי שימוש">
               תנאי שימוש
+            </a><span class="separator">|</span>
+            <a href="/return-policy" aria-label="מדיניות החזרות">
+              מדיניות החזרות
             </a>
           </div>
         </div>
@@ -621,68 +437,26 @@
         </div>
       </div>
     </footer>
-
-
-
-<!-- Zappy Attribution Header Script -->
-<script>
-(function() {
-  var websiteId = 'a14f878e-a00f-4437-96f4-7eca17fa02d5';
   
-  // Don't show header in preview mode
-  var currentUrl = window.location.href;
-  var isPreview = currentUrl.includes('/preview/') || 
-                  currentUrl.includes('/preview-fullscreen/') || 
-                  currentUrl.includes('localhost:5001') ||
-                  currentUrl.includes('localhost:3000');
-  
-  if (isPreview) {
-    return; // Exit early in preview mode
-  }
-  
-  fetch('https://qaapi.zappy5.com/api/website/' + websiteId + '/tier')
-    .then(function(response) { return response.json(); })
-    .then(function(data) {
-      if (data.showAttribution) {
-        var header = document.getElementById('zappy-attribution-header');
-        if (header) {
-          // Use dynamic announcement content if available
-          if (data.announcement && data.announcement.html) {
-            header.innerHTML = data.announcement.html;
-          }
-          // Apply fixed positioning styles inline (works for existing sites too)
-          header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
-          // Fix child elements that might have position: fixed from old CSS
-          var children = header.querySelectorAll('*');
-          for (var i = 0; i < children.length; i++) {
-            children[i].style.position = 'static';
-          }
-          // Get header height
-          var headerHeight = header.offsetHeight;
-          // Find and fix navbar to be fixed as well (prevents gap at top of page)
-          var navSelectors = ['nav', '.navbar', '.nav'];
-          var navbar = null;
-          for (var j = 0; j < navSelectors.length; j++) {
-            navbar = document.querySelector(navSelectors[j]);
-            if (navbar && navbar.id !== 'zappy-attribution-header') break;
-            navbar = null;
-          }
-          if (navbar) {
-            var navbarHeight = navbar.offsetHeight;
-            navbar.style.cssText += '; position: fixed !important; top: ' + headerHeight + 'px !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99998 !important;';
-            document.body.style.paddingTop = (headerHeight + navbarHeight) + 'px';
-          } else {
-            document.body.style.paddingTop = headerHeight + 'px';
-          }
-        }
-      }
-    })
-    .catch(function(error) {
-      console.error('Failed to check tier:', error);
-    });
-})();
-</script>
-    <div data-integration="accessibility:toolbar"></div>
+<div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+<aside class="cart-drawer rtl" id="cart-drawer" dir="rtl">
+  <div class="cart-drawer-header">
+    <h2>עגלת הקניות שלך</h2>
+    <button type="button" class="cart-drawer-close" id="cart-drawer-close" aria-label="סגור">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-drawer-body" id="cart-drawer-items">
+    <div class="empty-cart">העגלה ריקה</div>
+  </div>
+  <div class="cart-drawer-footer">
+    <div class="cart-drawer-total">
+      <span>סה"כ:</span>
+      <span id="cart-drawer-total">₪0</span>
+    </div>
+    <a href="/checkout" class="cart-drawer-checkout">המשך לתשלום</a>
+  </div>
+</aside>
 
     <script id="zappy-mobile-submenu-script">
     (function() {
@@ -735,4 +509,5 @@
     })();
     </script>
     <script src="/script.js"></script>
-</body></html>
+</body>
+</html>
