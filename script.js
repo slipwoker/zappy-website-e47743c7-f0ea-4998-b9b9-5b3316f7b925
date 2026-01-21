@@ -632,6 +632,15 @@ window.onload = function() {
     }
   }
   
+  // Helper: Make image URL absolute (works from any URL depth)
+  function makeAbsoluteUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/') || url.startsWith('data:')) {
+      return url;
+    }
+    return '/' + url;
+  }
+  
   // Render products to grid
   function renderProductsToGrid(grid, products) {
     grid.innerHTML = products.map(function(p) {
@@ -639,6 +648,9 @@ window.onload = function() {
       var displayPrice = hasSalePrice 
         ? t.currency + parseFloat(p.sale_price).toFixed(2) + '<span class="original-price">' + t.currency + parseFloat(p.price).toFixed(2) + '</span>'
         : t.currency + parseFloat(p.price).toFixed(2);
+      
+      // Get first image with absolute URL
+      var imageUrl = p.images && p.images[0] ? makeAbsoluteUrl(p.images[0]) : '';
       
       // Build tag badges
       var tagBadges = [];
@@ -673,7 +685,7 @@ window.onload = function() {
       return '<div class="product-card" data-product-id="' + p.id + '">' +
         tagsHtml +
         '<a href="/product/' + (p.slug || p.id) + '" class="product-card-link">' +
-          (p.images && p.images[0] ? '<img src="' + p.images[0] + '" alt="' + p.name + '">' : '<div style="height:200px;background:#f0f0f0;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#999;">📦</div>') +
+          (imageUrl ? '<img src="' + imageUrl + '" alt="' + p.name + '">' : '<div style="height:200px;background:#f0f0f0;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#999;">📦</div>') +
           '<h3>' + p.name + '</h3>' +
           '<p>' + (p.description || '').substring(0, 100) + '</p>' +
           '<div class="price">' + displayPrice + '</div>' +
@@ -2502,7 +2514,7 @@ async function loadFeaturedCategories() {
     // Render category blocks
     container.innerHTML = data.data.map(function(cat) {
       const imageUrl = cat.image || '';
-      return '<a href="/products?category=' + cat.id + '" class="category-block">' +
+      return '<a href="/products?category=' + cat.id + '" class="category-block" data-category-id="' + cat.id + '">' +
         '<div class="category-block-bg" style="background-image: url(\'' + imageUrl + '\')"></div>' +
         '<div class="category-block-overlay"></div>' +
         '<div class="category-block-content">' +
@@ -2675,7 +2687,15 @@ function showProductNotFound(container, t) {
 }
 
 function renderProductDetail(container, product, t) {
-  const images = product.images || [];
+  // Ensure image paths are absolute (start with /) to work from any URL depth
+  const images = (product.images || []).map(function(img) {
+    if (!img) return '';
+    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('/') || img.startsWith('data:')) {
+      return img;
+    }
+    // Make relative paths absolute
+    return '/' + img;
+  });
   const mainImage = images[0] || '';
   const hasMultipleImages = images.length > 1;
   const baseInStock = product.stock_status !== 'out_of_stock';
