@@ -420,31 +420,56 @@ window.onload = function() {
   
   // Set up fixed header heights - NO GAP between header and catalog menu
   function setupFixedHeaders() {
-    const header = document.querySelector('header');
+    const announcementBar = document.querySelector('.zappy-announcement-bar');
     const catalogMenu = document.querySelector('.zappy-catalog-menu');
+    const announcementBarHeight = announcementBar ? Math.ceil(announcementBar.getBoundingClientRect().height) : 0;
+    
+    const findPrimaryHeader = function() {
+      const candidates = [
+        'header',
+        'nav#navbar',
+        'nav.navbar',
+        'nav[class*="nav"]',
+        '.navbar'
+      ];
+      for (const selector of candidates) {
+        const el = document.querySelector(selector);
+        if (!el) continue;
+        if (el.classList && el.classList.contains('zappy-catalog-menu')) continue;
+        if (el.id === 'zappy-catalog-menu') continue;
+        if (el.classList && el.classList.contains('mobile-search-panel')) continue;
+        return el;
+      }
+      return null;
+    };
+    
+    const header = findPrimaryHeader();
     
     if (header) {
-      // Force remove any spacing from header
+      // Preserve header padding so height is accurate
       header.style.marginBottom = '0';
-      header.style.paddingBottom = '0';
-      header.style.borderBottom = 'none';
       
-      const headerHeight = header.offsetHeight;
-      let totalHeight = headerHeight;
+      // Ensure header sits below announcement bar
+      header.style.setProperty('top', announcementBarHeight + 'px', 'important');
+      
+      const headerHeight = Math.ceil(header.getBoundingClientRect().height || header.offsetHeight || 0);
+      let totalHeight = announcementBarHeight + headerHeight;
       
       if (catalogMenu) {
-        // Force remove any spacing from catalog menu
+        // Remove extra spacing from catalog menu
         catalogMenu.style.marginTop = '0';
-        catalogMenu.style.paddingTop = '0';
-        catalogMenu.style.borderTop = 'none';
         // Position exactly at header bottom - no gap
-        catalogMenu.style.top = headerHeight + 'px';
-        totalHeight = headerHeight + catalogMenu.offsetHeight;
+        const catalogTop = announcementBarHeight + headerHeight;
+        catalogMenu.style.setProperty('top', catalogTop + 'px', 'important');
+        const catalogHeight = Math.ceil(catalogMenu.getBoundingClientRect().height || catalogMenu.offsetHeight || 0);
+        totalHeight = catalogTop + catalogHeight;
       }
       
       document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
       document.documentElement.style.setProperty('--total-header-height', totalHeight + 'px');
       document.body.style.paddingTop = totalHeight + 'px';
+    } else if (announcementBarHeight > 0) {
+      document.body.style.paddingTop = announcementBarHeight + 'px';
     }
   }
   

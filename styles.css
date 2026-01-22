@@ -1409,7 +1409,13 @@ body.accessibility-widget-visible ._access-menu {
 }
 /* ==ZAPPY E-COMMERCE CSS== */
 /* E-commerce Enhancement Styles - Inherits site theme colors */
-.ecommerce-page { padding: 60px 24px; max-width: 1440px; margin: 0 auto; min-height: 60vh; }
+.ecommerce-page {
+  padding: 60px 24px;
+  padding-top: calc(60px + var(--total-header-height, 0px));
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
 .products-section { padding: 20px 0; }
 .products-section h1 { text-align: center; margin-bottom: 30px; font-size: 2.5rem; color: var(--text-color, var(--text, #1f2937)); }
 .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; margin-top: 24px; }
@@ -2245,7 +2251,10 @@ body {
 .zappy-catalog-menu.ltr .catalog-menu-container { flex-direction: row; justify-content: flex-start; }
 .zappy-catalog-menu.ltr .catalog-menu-categories { flex-direction: row; }
 /* Fixed Header & Catalog Menu Positioning - Overrides base styles */
-header {
+header,
+nav#navbar,
+nav.navbar,
+.navbar {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -2253,20 +2262,26 @@ header {
   z-index: 1000 !important;
   background: var(--background-color, var(--background, #fff)) !important;
   margin: 0 !important;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
   border: none !important;
-  border-bottom: none !important;
   box-shadow: none !important;
   outline: none !important;
 }
-header::after, header::before {
+header::after,
+header::before,
+nav#navbar::after,
+nav#navbar::before,
+nav.navbar::after,
+nav.navbar::before,
+.navbar::after,
+.navbar::before {
   display: none !important;
   content: none !important;
 }
-header > *:last-child {
+header > *:last-child,
+nav#navbar > *:last-child,
+nav.navbar > *:last-child,
+.navbar > *:last-child {
   margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
 }
 .zappy-catalog-menu {
   position: fixed !important;
