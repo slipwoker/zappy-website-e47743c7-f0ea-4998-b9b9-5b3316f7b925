@@ -1,85 +1,75 @@
-# חלומות מתוקים — Generative Engine Optimization Map
-
-> A ייצור ומכירת מזרנים business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### דף הבית
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com
+https://chance4u.net
 רכשו מזרנים ישירות מהיצרן ללא תיווך. חלומות מתוקים מציעה מזרנים איכותיים במחיר מפעל עם משלוח חינם ואחריות מלאה.
 
 ### Products
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/products
+https://chance4u.net/products
 המוצרים שלנו - חלומות מתוקים
 
 ### אודות
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/about
+https://chance4u.net/about
 למדו על חלומות מתוקים - יצרן מזרנים ישראלי המתמחה במכירה ישירה לצרכנים. ייצור מזרנים איכותיים במחיר מפעל ללא תיווך.
 
 ### צור קשר
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/contact
+https://chance4u.net/contact
 צרו קשר עם חלומות מתוקים לקבלת ייעוץ מקצועי והצעת מחיר למזרנים איכותיים. מכירה ישירה מהיצרן ללא תיווך.
 
 ### Cart
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/cart
+https://chance4u.net/cart
 עגלת הקניות שלך
 
 ### Checkout
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/checkout
+https://chance4u.net/checkout
 תשלום
 
 ### Login
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/login
+https://chance4u.net/login
 התחברות לקוחות
 
 ### Account
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/account
+https://chance4u.net/account
 החשבון שלי
 
 ### Order Success
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/order-success
+https://chance4u.net/order-success
 תודה על ההזמנה
 
 ### Product Detail
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/product/:slug
+https://chance4u.net/product/:slug
 פרטי המוצר - חלומות מתוקים
 
 ### Category
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/category/:slug
+https://chance4u.net/category/:slug
 מוצרים - חלומות מתוקים
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/privacy
+https://chance4u.net/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/terms
+https://chance4u.net/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/accessibility
+https://chance4u.net/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About חלומות מתוקים
-חלומות מתוקים is a business in the ייצור ומכירת מזרנים industry.
-
-## Target Audience
-קהל רחב
-
-## Industry
-ייצור ומכירת מזרנים
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/sitemap.xml
-- **Robots.txt**: https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/robots.txt
+- **Sitemap**: https://chance4u.net/sitemap.xml
+- **Robots.txt**: https://chance4u.net/robots.txt

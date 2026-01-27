@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/sitemap.xml
+Sitemap: https://chance4u.net/sitemap.xml

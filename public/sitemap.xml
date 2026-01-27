@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/products</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/products</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/about</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/about</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/contact</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/contact</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/cart</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/cart</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/checkout</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/checkout</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/login</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/login</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/account</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/account</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/order-success</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/order-success</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/product/:slug</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/product/:slug</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/category/:slug</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/category/:slug</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/privacy</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/terms</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/privacy</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://zappy-site-a14f878e-a00f-4437-96f4.onrender.com/accessibility</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://chance4u.net/terms</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chance4u.net/accessibility</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
