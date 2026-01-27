@@ -1,85 +1,75 @@
-# חלומות מתוקים — Generative Engine Optimization Map
-
-> A ייצור ומכירת מזרנים business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### דף הבית
-https://chance4u.net
+https://example.com
 רכשו מזרנים ישירות מהיצרן ללא תיווך. חלומות מתוקים מציעה מזרנים איכותיים במחיר מפעל עם משלוח חינם ואחריות מלאה.
 
 ### Products
-https://chance4u.net/products
+https://example.com/products
 המוצרים שלנו - חלומות מתוקים
 
 ### אודות
-https://chance4u.net/about
+https://example.com/about
 למדו על חלומות מתוקים - יצרן מזרנים ישראלי המתמחה במכירה ישירה לצרכנים. ייצור מזרנים איכותיים במחיר מפעל ללא תיווך.
 
 ### צור קשר
-https://chance4u.net/contact
+https://example.com/contact
 צרו קשר עם חלומות מתוקים לקבלת ייעוץ מקצועי והצעת מחיר למזרנים איכותיים. מכירה ישירה מהיצרן ללא תיווך.
 
 ### Cart
-https://chance4u.net/cart
+https://example.com/cart
 עגלת הקניות שלך
 
 ### Checkout
-https://chance4u.net/checkout
+https://example.com/checkout
 תשלום
 
 ### Login
-https://chance4u.net/login
+https://example.com/login
 התחברות לקוחות
 
 ### Account
-https://chance4u.net/account
+https://example.com/account
 החשבון שלי
 
 ### Order Success
-https://chance4u.net/order-success
+https://example.com/order-success
 תודה על ההזמנה
 
 ### Product Detail
-https://chance4u.net/product/:slug
+https://example.com/product/:slug
 פרטי המוצר - חלומות מתוקים
 
 ### Category
-https://chance4u.net/category/:slug
+https://example.com/category/:slug
 מוצרים - חלומות מתוקים
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://chance4u.net/privacy
+https://example.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://chance4u.net/terms
+https://example.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://chance4u.net/accessibility
+https://example.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About חלומות מתוקים
-חלומות מתוקים is a business in the ייצור ומכירת מזרנים industry.
-
-## Target Audience
-קהל רחב
-
-## Industry
-ייצור ומכירת מזרנים
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://chance4u.net/sitemap.xml
-- **Robots.txt**: https://chance4u.net/robots.txt
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
