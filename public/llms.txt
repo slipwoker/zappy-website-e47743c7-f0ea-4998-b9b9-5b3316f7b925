@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# חלומות מתוקים — Generative Engine Optimization Map
+
+> A ייצור ומכירת מזרנים business.
 
 ---
 
@@ -66,7 +68,15 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About חלומות מתוקים
+חלומות מתוקים is a business in the ייצור ומכירת מזרנים industry.
+
+## Target Audience
+קהל רחב
+
+## Industry
+ייצור ומכירת מזרנים
+
 ---
 
 # Additional Resources
