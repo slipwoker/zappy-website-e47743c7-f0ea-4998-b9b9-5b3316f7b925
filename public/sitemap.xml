@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chalomot-metukim.zappy5.app</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/products</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/products</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/about</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/about</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/contact</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/contact</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/cart</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/cart</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/checkout</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/checkout</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/login</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/login</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/account</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/account</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/order-success</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/order-success</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/product/:slug</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/product/:slug</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/category/:slug</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/category/:slug</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/privacy</loc>
-    <lastmod>2026-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://chalomot-metukim.zappy5.app/terms</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/privacy</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://chalomot-metukim.zappy5.app/accessibility</loc>
-    <lastmod>2026-01-27</lastmod>
+    <loc>https://chance4u.net/terms</loc>
+    <lastmod>2026-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chance4u.net/accessibility</loc>
+    <lastmod>2026-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

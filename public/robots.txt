@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chalomot-metukim.zappy5.app/sitemap.xml
+Sitemap: https://chance4u.net/sitemap.xml
