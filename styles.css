@@ -1407,6 +1407,7 @@ body.accessibility-widget-visible ._access-menu {
     display: none !important;
   }
 }
+
 /* ==ZAPPY E-COMMERCE CSS== */
 /* E-commerce Enhancement Styles - Inherits site theme colors */
 .ecommerce-page {
@@ -1423,10 +1424,13 @@ body.accessibility-widget-visible ._access-menu {
 .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: var(--primary-color, var(--primary, #ff0083)); }
 .product-card img { width: 100%; height: 200px; object-fit: contain; background: #f9fafb; border-radius: 8px; flex-shrink: 0; }
 .product-card .product-card-link { display: flex; flex-direction: column; flex: 1; text-decoration: none; color: inherit; }
-.product-card h3 { margin: 12px 0 8px; font-size: 16px; color: var(--text-color, var(--text, #1f2937)); min-height: 2.4em; line-height: 1.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.product-card p { font-size: 14px; color: var(--text-secondary, #6b7280); min-height: 3.6em; line-height: 1.2em; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 0 0 8px 0; flex-grow: 1; }
+.product-card h3 { margin: 12px 0 8px; font-size: 16px; color: var(--text-color, var(--text, #1f2937)); height: 2.4em; line-height: 1.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex-shrink: 0; }
+.product-card p { font-size: 14px !important; color: var(--text-secondary, #6b7280); height: 3.6em; line-height: 1.2em !important; display: -webkit-box !important; -webkit-line-clamp: 3 !important; -webkit-box-orient: vertical !important; overflow: hidden !important; margin: 0 0 8px 0; flex-shrink: 0; padding: 0 !important; }
+.product-card .card-content { display: flex; flex-direction: column; flex: 1; }
+.product-card ul { font-size: 14px; color: var(--text-secondary, #6b7280); line-height: 1.4em; margin: 0 0 8px 0; padding-inline-start: 20px; list-style-position: outside; }
+.product-card li { font-size: 14px; color: var(--text-secondary, #6b7280); margin-bottom: 4px; }
 .product-card .price { font-weight: 700; color: var(--primary-color, var(--primary, #ff0083)); font-size: 18px; margin-top: auto; padding-top: 8px; }
-.product-card .price .original-price { font-size: 14px; color: var(--text-secondary, #6b7280); text-decoration: line-through; margin-inline-start: 8px; font-weight: 400; }
+.product-card .price .original-price { font-size: 14px; color: var(--text-secondary, #6b7280); text-decoration: line-through; margin-inline-start: 8px !important; font-weight: 400; display: inline-block; }
 .product-card .add-to-cart { width: 100%; margin-top: 12px; padding: 10px; background: var(--primary-color, var(--primary, #ff0083)); color: var(--text-light, #fff); border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: filter 0.2s; flex-shrink: 0; }
 .product-card .add-to-cart:hover { filter: brightness(0.9); }
 .product-card .no-image-placeholder { height: 200px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 48px; flex-shrink: 0; }
@@ -1443,8 +1447,8 @@ body.accessibility-widget-visible ._access-menu {
 /* Standard layout - balanced cards with image, name, short description, price */
 .product-grid.layout-standard { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
 .product-card.standard img, .product-card.standard .no-image-placeholder { height: 180px; }
-.product-card.standard h3 { min-height: 2.4em; -webkit-line-clamp: 2; }
-.product-card.standard p { min-height: 2.4em; -webkit-line-clamp: 2; }
+.product-card.standard h3 { height: 2.4em; -webkit-line-clamp: 2; }
+.product-card.standard p { height: 2.4em; -webkit-line-clamp: 2 !important; }
 .product-card.standard .add-to-cart { display: none; }
 
 /* Detailed layout - large cards with full description and add-to-cart */
@@ -1625,6 +1629,17 @@ body.accessibility-widget-visible ._access-menu {
 .product-info .product-stock.out-of-stock { color: #dc2626; }
 .product-info .product-stock svg { width: 20px; height: 20px; }
 .product-info .product-description { line-height: 1.7; color: var(--text-color, #4b5563); }
+.product-info .product-description ul, .product-info .product-description ol { padding-inline-start: 1.5rem; margin-bottom: 1rem; }
+.product-info .product-description li { margin-bottom: 0.5rem; }
+/* Product Specifications */
+.product-specifications { margin: 24px 0; padding: 20px; background: var(--surface-color, var(--surface, #f9fafb)); border-radius: 12px; }
+.product-specifications h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 16px 0; color: var(--text-color, var(--text, #1f2937)); }
+.specs-table { width: 100%; border-collapse: collapse; }
+.specs-table tr:not(:last-child) { border-bottom: 1px solid var(--border-color, #e5e7eb); }
+.specs-table th, .specs-table td { padding: 12px 0; text-align: start; vertical-align: top; }
+.specs-table th { font-weight: 500; color: var(--text-secondary, #6b7280); width: 40%; padding-left: 16px; }
+.specs-table td { font-weight: 500; color: var(--text-color, var(--text, #1f2937)); }
+@media (max-width: 480px) { .specs-table th, .specs-table td { display: block; width: 100%; padding: 6px 0; } .specs-table th { padding-bottom: 2px; } .specs-table td { padding-bottom: 12px; } }
 .product-quantity { display: flex; align-items: center; gap: 16px; }
 .product-quantity label { font-weight: 500; color: var(--text-color, #374151); }
 .quantity-selector { display: flex; align-items: center; border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; overflow: hidden; }
@@ -1634,9 +1649,26 @@ body.accessibility-widget-visible ._access-menu {
 .quantity-selector input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .product-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .product-actions .add-to-cart { flex: 1; min-width: 200px; padding: 16px 32px; font-size: 1rem; }
+/* Sticky add-to-cart button on product details page - stays in place while scrolling */
+.product-info .product-actions { position: sticky; bottom: 20px; z-index: 100; }
+/* Catalog mode - inquiry/contact buttons instead of cart */
+.product-actions.catalog-mode { flex-direction: row; gap: 12px; max-width: 600px; margin: 0 auto; width: 100%; }
+.product-actions.catalog-mode .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.2s; flex: 1; }
+.product-actions.catalog-mode .btn svg { flex-shrink: 0; }
+.product-actions.catalog-mode .inquiry-btn { background: var(--primary-color, var(--primary, #ff0083)); color: var(--text-light, #fff); border: none; }
+.product-actions.catalog-mode .inquiry-btn:hover { filter: brightness(0.9); }
+.product-actions.catalog-mode .call-btn { background: var(--surface-color, var(--surface, #f3f4f6)); color: var(--text-color, var(--text, #374151)); border: 1px solid var(--border-color, #e5e7eb); }
+.product-actions.catalog-mode .call-btn:hover { background: var(--border-color, #e5e7eb); }
+@media (max-width: 480px) { .product-actions.catalog-mode { flex-direction: column; } .product-actions.catalog-mode .btn { width: 100%; } }
 .back-to-products { display: inline-flex; align-items: center; gap: 8px; color: var(--text-secondary, #6b7280); text-decoration: none; margin-bottom: 24px; font-size: 0.875rem; transition: color 0.2s; }
 .back-to-products:hover { color: var(--primary-color, #ff0083); }
 .back-to-products svg { width: 16px; height: 16px; }
+/* Breadcrumb navigation */
+.product-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; font-size: 0.875rem; flex-wrap: wrap; }
+.product-breadcrumb a { color: var(--text-secondary, #6b7280); text-decoration: none; transition: color 0.2s; }
+.product-breadcrumb a:hover { color: var(--primary-color, #ff0083); }
+.product-breadcrumb .breadcrumb-separator { color: var(--text-secondary, #9ca3af); font-size: 12px; }
+.product-breadcrumb .breadcrumb-current { color: var(--text-color, #1f2937); font-weight: 500; }
 .product-not-found, .category-not-found { text-align: center; padding: 60px 20px; }
 .product-not-found h2, .category-not-found h2 { font-size: 1.5rem; color: var(--text-color, #1f2937); margin-bottom: 16px; }
 .related-products-section { padding: 40px 0; border-top: 1px solid var(--border-color, #e5e7eb); margin-top: 40px; }
@@ -1684,7 +1716,7 @@ body.accessibility-widget-visible ._access-menu {
   @supports not (selector(:has(*))) {
     .nav-menu, .nav-links { display: flex; align-items: center; }
   }
-  /* Desktop icon order: Cart, Login, Search (left to right) - RTL aware */
+  /* Desktop icon order: Search, Login, Cart (left to right for LTR; mirrored for RTL) */
   .nav-ecommerce-icons { flex-direction: row !important; }
   .nav-ecommerce-icons .cart-link.nav-cart { order: 3 !important; }
   .nav-ecommerce-icons .login-link.nav-login { order: 2 !important; }
@@ -1702,15 +1734,50 @@ body.accessibility-widget-visible ._access-menu {
 }
 /* Position icons at edge of viewport using absolute positioning */
 @media (min-width: 769px) {
-  /* Position icons container at left edge (RTL) or right edge (LTR) */
+  /* Position icons container at end edge (right for LTR, left for RTL) - uses logical properties for dynamic language switching */
   .nav-ecommerce-icons.nav-icons-left {
     position: absolute !important;
-    left: 24px !important;
-    right: auto !important;
+    inset-inline-end: 24px !important;
+    inset-inline-start: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     margin: 0 !important;
     z-index: 100 !important;
+  }
+  
+  /* V2 navbar (nav-right-group structure): Keep icons inline, not absolute */
+  .nav-right-group .nav-ecommerce-icons.nav-icons-left {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    inset-inline-end: auto !important;
+    margin: 0 !important;
+    order: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Hide nav-icons-right in V2 navbar desktop (search toggle is for mobile only) */
+  .nav-right-group .nav-ecommerce-icons.nav-icons-right {
+    display: none !important;
+  }
+  
+  /* Ensure nav-right-group fills container and spaces elements properly */
+  .nav-right-group:has(.nav-ecommerce-icons) {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  
+  /* Keep nav-brand and nav-menu together in RTL */
+  .nav-right-group .nav-brand {
+    flex-shrink: 0 !important;
+  }
+  
+  .nav-right-group .nav-menu {
+    flex-grow: 1 !important;
+    justify-content: flex-start !important;
   }
 }
 /* Add body padding to account for fixed headers */
@@ -1759,7 +1826,7 @@ body {
   .nav-search-btn { width: 28px; height: 28px; }
   .search-icon { width: 16px; height: 16px; }
   .nav-ecommerce-icons { gap: 6px; margin-right: 10px; }
-  .cart-link.nav-cart, .login-link.nav-login { width: 34px; height: 34px; }
+  .cart-link.nav-cart, .login-link.nav-login { width: 40px; height: 40px; } /* Match search/lang button size */
 }
 @media (max-width: 480px) {
   .nav-ecommerce-icons { gap: 4px; }
@@ -1816,24 +1883,29 @@ body {
     flex-shrink: 0 !important;
   }
   
-  /* Left icons group (Cart, Login) - positioned on left side */
+  /* Left icons group (Cart, Login) - positioned at end edge (right for LTR, left for RTL) */
+  /* 20px margin to prevent cutoff in iframes */
   .nav-icons-left {
     order: 1 !important;
     position: absolute !important;
-    left: 12px !important;
+    inset-inline-end: 20px !important;
+    inset-inline-start: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     z-index: 100 !important;
   }
   
-  /* Right icons group (Search) - positioned near hamburger */
-  .nav-icons-right {
+  /* Right icons group (Search) - positioned with proper gap from hamburger */
+  .nav-icons-right,
+  .nav-ecommerce-icons.nav-icons-right {
     order: 3 !important;
     position: absolute !important;
-    right: 50px !important;
+    inset-inline-start: 60px !important;
+    inset-inline-end: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     z-index: 100 !important;
+    gap: 2px !important;
   }
   
   /* Make header position relative for absolute children */
@@ -1889,13 +1961,16 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--surface-color, var(--surface, #f3f4f6));
   color: var(--text-color, var(--text, #374151));
   border: none;
   cursor: pointer;
+  padding: 8px;
   transition: background 0.2s ease, color 0.2s ease;
 }
 .nav-search-toggle:hover {
@@ -1914,7 +1989,7 @@ body {
   background: var(--background-color, var(--background, #fff));
   padding: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  z-index: 10000;
+  z-index: 100001; /* Must be above navbar (z-index: 100000) */
   transform: translateY(-100%);
   transition: transform 0.3s ease;
 }
@@ -1928,7 +2003,9 @@ body {
   gap: 12px;
 }
 .mobile-search-panel input {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
   padding: 12px 16px;
   border: 1px solid var(--border-color, #e5e7eb);
   border-radius: 24px;
@@ -1943,6 +2020,9 @@ body {
 .mobile-search-panel .close-search {
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  flex: 0 0 40px;
   border: none;
   background: var(--surface-color, var(--surface, #f3f4f6));
   border-radius: 50%;
@@ -1951,6 +2031,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text-color, var(--text, #374151));
+  padding: 0;
 }
 .mobile-search-panel .search-results {
   margin-top: 16px;
@@ -1960,6 +2041,27 @@ body {
 @media (min-width: 769px) {
   .nav-search-toggle { display: none !important; }
   .mobile-search-panel { display: none !important; }
+}
+/* Mobile hamburger button protection - ensure proper sizing even with global button styles */
+@media (max-width: 768px) {
+  .mobile-toggle,
+  #mobileToggle,
+  .phone-header-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    padding: 10px !important;
+    flex-shrink: 0 !important;
+  }
+  .mobile-toggle svg,
+  #mobileToggle svg,
+  .phone-header-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    flex-shrink: 0 !important;
+  }
 }
 /* Shipping Methods Styles */
 #shipping-methods { display: flex; flex-direction: column; gap: 12px; }
@@ -2026,14 +2128,14 @@ body {
 .discount-row { color: #10b981; font-weight: 500; }
 .discount-row #discount { color: #10b981; }
 /* Cart Drawer Styles */
-.cart-drawer-overlay { position: fixed !important; inset: 0 !important; background: rgba(0,0,0,0.5) !important; z-index: 9998 !important; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; width: 100% !important; height: 100% !important; }
+.cart-drawer-overlay { position: fixed !important; inset: 0 !important; background: rgba(0,0,0,0.5) !important; z-index: 999999 !important; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; width: 100% !important; height: 100% !important; }
 .cart-drawer-overlay.active { opacity: 1 !important; visibility: visible !important; }
-.cart-drawer { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; max-width: 420px !important; height: 100vh !important; background: var(--background-color, var(--background, #fff)) !important; z-index: 9999 !important; display: flex !important; flex-direction: column !important; transform: translateX(-100%); transition: transform 0.3s ease; box-shadow: -4px 0 20px rgba(0,0,0,0.15) !important; }
+.cart-drawer { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; max-width: 420px !important; height: 100vh !important; background: var(--background-color, var(--background, #fff)) !important; z-index: 9999999 !important; display: flex !important; flex-direction: column !important; transform: translateX(-100%); transition: transform 0.3s ease; box-shadow: -4px 0 20px rgba(0,0,0,0.15) !important; }
 .cart-drawer { height: 100dvh !important; height: -webkit-fill-available !important; }
 .cart-drawer.active { transform: translateX(0) !important; }
 .cart-drawer-header { display: flex; align-items: center; justify-content: space-between; padding: 20px; border-bottom: 1px solid var(--border-color, #e5e7eb); }
 .cart-drawer-header h2 { margin: 0; font-size: 1.25rem; color: var(--text-color, var(--text, #1f2937)); }
-.cart-drawer-close { background: none; border: none; padding: 8px; cursor: pointer; color: var(--text-secondary, #6b7280); border-radius: 8px; transition: all 0.2s; }
+.cart-drawer-close { flex-shrink: 0; width: 40px; height: 40px; background: none; border: none; padding: 8px; cursor: pointer; color: var(--text-secondary, #6b7280); border-radius: 8px; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
 .cart-drawer-close:hover { background: var(--surface-color, var(--surface, #f3f4f6)); color: var(--text-color, var(--text, #1f2937)); }
 .cart-drawer-body { flex: 1; overflow-y: auto; padding: 0; }
 .cart-drawer-body .cart-item { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--border-color, #e5e7eb); }
@@ -2250,8 +2352,7 @@ body {
   gap: 8px;
   padding: 10px 24px;
   overflow: visible;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  /* flex-direction and justify-content set by .rtl/.ltr class rules below */
 }
 .catalog-menu-list {
   display: flex;
@@ -2284,6 +2385,50 @@ body {
 .catalog-menu-all:hover {
   filter: brightness(0.9);
   color: var(--text-light, #fff) !important;
+}
+/* Products dropdown in V2 navbar - alignment and positioning */
+.zappy-products-dropdown {
+  position: relative !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.zappy-products-dropdown > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  white-space: nowrap !important;
+}
+.zappy-products-dropdown .dropdown-arrow {
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease !important;
+}
+.zappy-products-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg) !important;
+}
+.zappy-products-dropdown .sub-menu {
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: auto !important;
+  min-width: 180px !important;
+  background: var(--background-color, var(--background, #fff)) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+  padding: 8px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(10px) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease !important;
+  z-index: 1000 !important;
+  list-style: none !important;
+  margin: 4px 0 0 0 !important;
+}
+.zappy-products-dropdown:hover .sub-menu,
+.zappy-products-dropdown:focus-within .sub-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 .zappy-products-dropdown .sub-menu a {
   display: block;
@@ -2334,12 +2479,9 @@ body {
   gap: 8px;
   flex-wrap: wrap;
 }
-/* RTL class support */
-.zappy-catalog-menu.rtl .catalog-menu-container { flex-direction: row-reverse; justify-content: flex-end; }
-.zappy-catalog-menu.rtl .catalog-menu-categories { flex-direction: row-reverse; }
-.zappy-catalog-menu.ltr .catalog-menu-container { flex-direction: row; justify-content: flex-start; }
-.zappy-catalog-menu.ltr .catalog-menu-categories { flex-direction: row; }
-/* Fixed Header & Catalog Menu Positioning - Overrides base styles */
+/* RTL/LTR class support - see below for !important overrides */
+
+/* V1: Fixed Header & Catalog Menu Positioning - Overrides base styles */
 header,
 nav#navbar,
 nav.navbar,
@@ -2349,11 +2491,11 @@ nav.navbar,
   left: 0 !important;
   right: 0 !important;
   z-index: 1000 !important;
-  background: var(--background-color, var(--background, #fff)) !important;
   margin: 0 !important;
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
+  background: var(--background-color, var(--background, #fff)) !important;
 }
 header::after,
 header::before,
@@ -2372,39 +2514,66 @@ nav.navbar > *:last-child,
 .navbar > *:last-child {
   margin-bottom: 0 !important;
 }
-.zappy-catalog-menu {
-  position: fixed !important;
-  top: 60px !important; /* Default, JS will set exact value */
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 999 !important;
-  background: var(--surface-color, var(--surface, #f9fafb)) !important;
-  margin: 0 !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border: none !important;
-  border-top: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  display: block !important;
-  visibility: visible !important;
+
+
+/* V1: Catalog menu full styling overrides - desktop only */
+/* NOTE: Mobile visibility is handled via @media (max-width: 768px) { .zappy-catalog-menu { display: none !important; } } */
+@media (min-width: 769px) {
+  .zappy-catalog-menu {
+    position: fixed !important;
+    top: 60px !important; /* Default, JS will set exact value */
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+    background: var(--surface-color, var(--surface, #f9fafb)) !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  .zappy-catalog-menu::before, .zappy-catalog-menu::after {
+    display: none !important;
+    content: none !important;
+  }
 }
-.zappy-catalog-menu::before, .zappy-catalog-menu::after {
-  display: none !important;
-  content: none !important;
-}
-/* Catalog menu container - centered and RTL */
+
+/* Catalog menu container - base styles */
 .zappy-catalog-menu .catalog-menu-container {
-  justify-content: center !important;
   width: 100% !important;
   max-width: 100% !important;
+  justify-content: center !important;
+  flex-direction: row !important;
 }
 .zappy-catalog-menu .catalog-menu-list,
 .zappy-catalog-menu .catalog-menu-categories {
-  justify-content: center !important;
-  direction: rtl !important;
+  gap: 4px;
   flex-direction: row !important;
 }
+/* RTL layout - multiple selectors to ensure it works */
+/* Note: With direction:rtl already set, flex-direction:row naturally flows right-to-left */
+/* Using row-reverse would cause double-reversal, making items appear LTR */
+html[dir="rtl"] .zappy-catalog-menu .catalog-menu-container,
+html[lang="he"] .zappy-catalog-menu .catalog-menu-container,
+html[lang="ar"] .zappy-catalog-menu .catalog-menu-container,
+body[dir="rtl"] .zappy-catalog-menu .catalog-menu-container,
+.zappy-catalog-menu[dir="rtl"] .catalog-menu-container,
+.zappy-catalog-menu.rtl .catalog-menu-container {
+  flex-direction: row !important;
+}
+html[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
+html[lang="he"] .zappy-catalog-menu .catalog-menu-categories,
+html[lang="ar"] .zappy-catalog-menu .catalog-menu-categories,
+body[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
+.zappy-catalog-menu[dir="rtl"] .catalog-menu-categories,
+.zappy-catalog-menu.rtl .catalog-menu-categories {
+  flex-direction: row !important;
+}
+/* V2 E-COMMERCE THEME OVERRIDES: Now handled by ecommerceV2GenerationService.js */
 /* ==END ZAPPY E-COMMERCE CSS== */
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
@@ -2451,3 +2620,264 @@ nav.navbar > *:last-child,
 }
 
 /* ========== END RTL MOBILE NAVBAR FIX ========== */
+
+
+/* ========== GRID RESPONSIVE FIX (zappy-grid-mobile-fix) ========== */
+/* Ensures grids with explicit columns use CSS variable and are responsive on mobile */
+
+/* DESKTOP: Explicit column grids use CSS variable for grid-template-columns */
+/* This rule reads the --zappy-grid-cols CSS variable set in inline styles */
+[data-zappy-explicit-columns="true"] {
+  display: grid !important;
+  grid-template-columns: var(--zappy-grid-cols, repeat(2, minmax(0, 1fr))) !important;
+}
+
+/* ZOOM WRAPPER: Ensure overflow:hidden for crop zoom effect */
+/* The wrapper clips the oversized image to create the zoom/crop effect */
+[data-zappy-zoom-wrapper="true"] {
+  overflow: hidden !important;
+}
+
+@media (max-width: 768px) {
+  /* Auto-grid (AI-generated) grids - force single column on mobile */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"],
+  [data-zappy-auto-grid="true"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Media-only grid items - constrain height on mobile */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > .zappy-grid-item-media-only,
+  [data-zappy-auto-grid="true"] > .zappy-grid-item-media-only {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > .zappy-grid-item-media-only img,
+  [data-zappy-auto-grid="true"] > .zappy-grid-item-media-only img {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  /* Full-width mode zoom wrappers - ensure image is visible (not collapsed) */
+  [data-zappy-zoom-wrapper-width-mode="full"] img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 300px !important;
+    left: auto !important;
+    top: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* MOBILE: Explicit column grids - force single column on mobile */
+  [data-zappy-explicit-columns="true"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Inline grid with fixed pixel columns - make responsive */
+  .zappy-inline-grid-active.zappy-preserve-css-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* AI-generated section grids with common naming patterns */
+  /* These often have fixed pixel column widths that don't adapt to mobile */
+  [class*="-grid"]:not([data-zappy-auto-grid]):not(.zappy-preserve-css-grid):not([data-zappy-explicit-columns="true"]) {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Reset any column/row spanning items on mobile - they cause overflow */
+  /* Gallery grids often have -large items that span multiple columns */
+  [class*="-grid"] > [class*="-large"],
+  [class*="-grid"] > [class*="-item-large"],
+  [class*="-grid"] > [style*="grid-column: span"],
+  [class*="-grid"] > [style*="grid-row: span"] {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+  
+  /* Common AI-generated visual/frame containers that may overflow */
+  [class*="-visual"],
+  [class*="-frame"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  
+  /* CRITICAL: Constrain zoom wrappers on mobile - they often have fixed pixel widths */
+  [data-zappy-zoom-wrapper="true"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+  }
+  
+  /* Fix zoom wrapper images on mobile - make responsive */
+  [data-zappy-zoom-wrapper="true"] img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+  
+  /* ========== MAIN PADDING FIX ========== */
+  /* Fix double-padding from old V2 mobile CSS that applied padding to both main and sections */
+  /* Exclude ecommerce-page which needs its own horizontal padding for proper mobile layout */
+  main:not(.ecommerce-page) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Hero sections need flex-column on mobile for proper stacking */
+  section[class*="hero"],
+  .home-Hero-section {
+    flex-direction: column !important;
+  }
+  
+  /* Hero sections need extra padding-top to clear the sticky navbar */
+  /* The navbar is ~70px tall, so hero needs at least 100px padding-top */
+  [class*="-hero-section"]:first-of-type,
+  main > section:first-child {
+    padding-top: 100px !important;
+  }
+  
+  .hero-container,
+  section[class*="hero"] > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* ========== HERO WIDTH FIX ========== */
+  /* Remove nested horizontal padding - only section should have horizontal padding */
+  .home-Hero-section .hero-container,
+  .home-Hero-section .hero-content,
+  .home-Hero-section .hero-metrics,
+  .home-Hero-section .hero-image-column,
+  .home-Hero-section .hero-image-frame,
+  .home-Hero-section .container,
+  .home-Hero-section .wrapper,
+  section[class*="hero"] .hero-container,
+  section[class*="hero"] .hero-content,
+  section[class*="hero"] .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-inline-start: 0 !important;
+    padding-inline-end: 0 !important;
+  }
+  
+  /* ========== HERO VERTICAL SPACING FIX ========== */
+  .home-Hero-section .hero-content,
+  .home-Hero-section .hero-container,
+  .home-Hero-section .hero-image-column {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  
+  .hero-cta-row {
+    padding: 8px 0 !important;
+    margin: 8px 0 12px !important;
+  }
+  
+  .hero-content {
+    gap: 12px !important;
+  }
+  
+  .hero-metrics {
+    gap: 10px !important;
+  }
+  
+  .metric-card {
+    padding: 12px !important;
+  }
+  
+  .hero-container {
+    gap: 16px !important;
+  }
+}
+
+/* ========== SVG DIVIDER OVERLAY FIX ========== */
+/* Many AI sections place .section-divider absolutely at the bottom of a section,
+   which can overlap/cut off the last row of content. The safest CSS-only fix
+   is to prevent overlay by forcing the divider into normal flow. */
+.section-divider {
+  position: relative !important;
+  bottom: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: auto !important;
+  margin-top: 16px !important;
+}
+
+.section-divider svg {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Exclude small icon SVGs from full-width sizing - these are decorative icons, not wave dividers */
+.section-divider svg.divider-icon,
+.section-divider svg[width="32"],
+.section-divider svg[width="24"],
+.section-divider svg[width="48"],
+.section-divider svg[viewBox="0 0 32 32"],
+.section-divider svg[viewBox="0 0 24 24"],
+.section-divider svg[viewBox="0 0 48 48"] {
+  width: auto !important;
+  height: auto !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+}
+
+/* ========== END SVG DIVIDER OVERLAY FIX ========== */
+
+/* ========== HORIZONTAL-PAIR GRID MEDIA FIX ========== */
+/* Ensures media in horizontal-pair grids fills columns correctly */
+
+/* Media cells in horizontal-pair grids */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  min-height: 0 !important;
+}
+
+/* Images/videos: preserve aspect ratio while filling column width */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > img,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > video {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  display: block !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Icons/SVG: fill cell behavior */
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > svg,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > .iconify,
+.zappy-horizontal-grid[data-zappy-grid-kind="horizontal-pair"] [data-zappy-media-cell="true"] > .iconify svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  display: block !important;
+}
+
+/* ========== END HORIZONTAL-PAIR GRID MEDIA FIX ========== */
+
+/* ========== END GRID RESPONSIVE FIX ========== */
