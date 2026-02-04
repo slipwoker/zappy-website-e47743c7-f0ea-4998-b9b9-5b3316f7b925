@@ -356,7 +356,14 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <script>window.ZAPPY_WEBSITE_ID = "e47743c7-f0ea-4998-b9b9-5b3316f7b925";window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
+  <script>
+    window.ZAPPY_WEBSITE_ID = "e47743c7-f0ea-4998-b9b9-5b3316f7b925";
+    // Preview pages are served by the Zappy server itself (localhost in dev), so use that base.
+    // Deployed sites are static and must call the public Zappy API (never localhost).
+    window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview'))
+      ? "https://api.zappy5.com"
+      : "https://api.zappy5.com";
+  </script>
   
     <div class="mobile-search-panel" id="mobile-search-panel">
       <div class="search-wrapper">
@@ -448,20 +455,46 @@
                   <button type="button" class="checkout-logout-btn" id="checkout-logout-btn">התנתק</button>
                 </div>
                 <h2>פרטי לקוח</h2>
-                <input type="text" placeholder="שם מלא" id="customer-name" required>
-                <input type="email" placeholder="אימייל" id="customer-email" required>
-                <input type="tel" placeholder="טלפון" id="customer-phone" required>
+                <div class="input-wrapper">
+                  <input type="text" placeholder="שם מלא" id="customer-name" required>
+                  <span class="field-error" id="customer-name-error"></span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" placeholder="אימייל" id="customer-email" required>
+                  <span class="field-error" id="customer-email-error"></span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="tel" placeholder="טלפון" id="customer-phone" required>
+                  <span class="field-error" id="customer-phone-error"></span>
+                </div>
               </div>
               <div class="checkout-step">
                 <h2>שיטת משלוח</h2>
                 <div id="shipping-methods">טוען שיטות משלוח...</div>
+                <span class="field-error" id="shipping-method-error"></span>
               </div>
               <div class="checkout-step" id="shipping-address-section">
                 <h2>כתובת למשלוח</h2>
-                <input type="text" placeholder="רחוב ומספר" id="shipping-street" required>
-                <input type="text" placeholder="דירה, קומה, כניסה" id="shipping-apartment">
-                <input type="text" placeholder="עיר" id="shipping-city" required>
-                <input type="text" placeholder="מיקוד" id="shipping-zip">
+                <div class="input-wrapper">
+                  <input type="text" placeholder="רחוב ומספר" id="shipping-street" required>
+                  <span class="field-error" id="shipping-street-error"></span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" placeholder="דירה, קומה, כניסה" id="shipping-apartment">
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" placeholder="עיר" id="shipping-city" required>
+                  <span class="field-error" id="shipping-city-error"></span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" placeholder="מיקוד" id="shipping-zip">
+                </div>
+                <div class="save-address-wrapper">
+                  <label class="save-address-label">
+                    <input type="checkbox" id="save-address-checkbox" class="save-address-checkbox" />
+                    <span data-i18n="ecom_saveAddressForNextTime">שמור את הכתובת לפעם הבאה</span>
+                  </label>
+                </div>
               </div>
             </div>
             <div class="order-summary">
@@ -498,6 +531,13 @@
                 <div class="checkout-step payment-step">
                   <h2>תשלום</h2>
                   <div id="payment-container">טוען אפשרויות תשלום...</div>
+                </div>
+                <div class="terms-checkbox-wrapper">
+                  <label class="terms-checkbox-label">
+                    <input type="checkbox" id="terms-checkbox" class="terms-checkbox" />
+                    <span><span data-i18n="ecom_agreeToTerms">אני מסכים/ה ל</span> <a href="/terms" target="_blank" class="terms-link" data-i18n="ecom_termsAndConditions">תנאי השימוש</a></span>
+                  </label>
+                  <span class="field-error" id="terms-checkbox-error"></span>
                 </div>
                 <button class="btn btn-primary" id="place-order-btn">בצע הזמנה</button>
               </div>
@@ -562,55 +602,8 @@
     <a href="/checkout" class="cart-drawer-checkout">המשך לתשלום</a>
   </div>
 </aside>
-  <!-- Mobile Menu Script for E-commerce Pages -->
   <script>
-  (function() {
-    // Initialize mobile menu toggle for e-commerce pages
-    var mobileToggle = document.querySelector('.mobile-toggle, #mobileToggle');
-    var navMenu = document.querySelector('#navMenu, .nav-menu, .navbar-menu');
-    
-    if (!mobileToggle || !navMenu) return;
-    if (mobileToggle.hasAttribute('data-ecom-init')) return;
-    mobileToggle.setAttribute('data-ecom-init', 'true');
-    
-    mobileToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      var hamburgerIcon = this.querySelector('.hamburger-icon');
-      var closeIcon = this.querySelector('.close-icon');
-      var isActive = navMenu.classList.contains('active');
-      
-      if (isActive) {
-        navMenu.classList.remove('active');
-        navMenu.style.display = '';
-        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
-        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
-        document.body.style.overflow = '';
-      } else {
-        navMenu.classList.add('active');
-        navMenu.style.display = 'block';
-        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
-        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-    
-    // Close menu when clicking nav links
-    navMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        var hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
-        var closeIcon = mobileToggle.querySelector('.close-icon');
-        navMenu.classList.remove('active');
-        navMenu.style.display = '';
-        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
-        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
-        document.body.style.overflow = '';
-      });
-    });
-  })();
-  
-  // Search handling for e-commerce pages
+  <!-- Search handling for e-commerce pages -->
   (function() {
     // Unified search function that works in both preview and deployed modes
     function performSearch(query) {

@@ -356,7 +356,14 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <script>window.ZAPPY_WEBSITE_ID = "e47743c7-f0ea-4998-b9b9-5b3316f7b925";window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
+  <script>
+    window.ZAPPY_WEBSITE_ID = "e47743c7-f0ea-4998-b9b9-5b3316f7b925";
+    // Preview pages are served by the Zappy server itself (localhost in dev), so use that base.
+    // Deployed sites are static and must call the public Zappy API (never localhost).
+    window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview'))
+      ? "https://api.zappy5.com"
+      : "https://api.zappy5.com";
+  </script>
   
     <div class="mobile-search-panel" id="mobile-search-panel">
       <div class="search-wrapper">
@@ -433,7 +440,7 @@
 <section class="legal-page-content return-policy">
   <div class="container">
     <h1>מדיניות החזרת מוצרים</h1>
-    <p class="last-updated"><strong>עדכון אחרון:</strong> 3.2.2026</p>
+    <p class="last-updated"><strong>עדכון אחרון:</strong> 4.2.2026</p>
     
     <p>חלומות מתוקים מחויבת לשביעות רצון לקוחותיה. מדיניות זו מפרטת את זכויותיכם להחזרת מוצרים בהתאם לחוק הגנת הצרכן.</p>
 
@@ -517,55 +524,8 @@
     <a href="/checkout" class="cart-drawer-checkout">המשך לתשלום</a>
   </div>
 </aside>
-  <!-- Mobile Menu Script for E-commerce Pages -->
   <script>
-  (function() {
-    // Initialize mobile menu toggle for e-commerce pages
-    var mobileToggle = document.querySelector('.mobile-toggle, #mobileToggle');
-    var navMenu = document.querySelector('#navMenu, .nav-menu, .navbar-menu');
-    
-    if (!mobileToggle || !navMenu) return;
-    if (mobileToggle.hasAttribute('data-ecom-init')) return;
-    mobileToggle.setAttribute('data-ecom-init', 'true');
-    
-    mobileToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      var hamburgerIcon = this.querySelector('.hamburger-icon');
-      var closeIcon = this.querySelector('.close-icon');
-      var isActive = navMenu.classList.contains('active');
-      
-      if (isActive) {
-        navMenu.classList.remove('active');
-        navMenu.style.display = '';
-        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
-        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
-        document.body.style.overflow = '';
-      } else {
-        navMenu.classList.add('active');
-        navMenu.style.display = 'block';
-        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
-        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-    
-    // Close menu when clicking nav links
-    navMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        var hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
-        var closeIcon = mobileToggle.querySelector('.close-icon');
-        navMenu.classList.remove('active');
-        navMenu.style.display = '';
-        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
-        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
-        document.body.style.overflow = '';
-      });
-    });
-  })();
-  
-  // Search handling for e-commerce pages
+  <!-- Search handling for e-commerce pages -->
   (function() {
     // Unified search function that works in both preview and deployed modes
     function performSearch(query) {
