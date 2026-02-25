@@ -1410,6 +1410,7 @@ body.accessibility-widget-visible ._access-menu {
 
 
 
+
 /* ==ZAPPY E-COMMERCE CSS== */
 /* E-commerce Enhancement Styles - Inherits site theme colors */
 .ecommerce-page {
@@ -1571,7 +1572,7 @@ body.accessibility-widget-visible ._access-menu {
 .btn-sm { padding: 8px 16px; font-size: 0.875rem; }
 .btn-secondary { background: var(--surface-color, #f3f4f6); color: var(--text-color, #374151); border: 1px solid var(--border-color, #d1d5db); }
 .btn-secondary:hover { background: var(--border-color, #e5e7eb); }
-.orders-section { }
+.orders-section { border: 1px solid var(--border-color, rgba(128,128,128,0.2)); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
 .orders-section h2 { font-size: 1.25rem; color: var(--text-color, #1f2937); margin-bottom: 20px; }
 .orders-loading { text-align: center; padding: 40px; color: var(--text-secondary, #6b7280); }
 .orders-empty { text-align: center; padding: 40px; background: var(--surface-color, #f9fafb); border-radius: 12px; }
@@ -1596,7 +1597,7 @@ body.accessibility-widget-visible ._access-menu {
 .order-items-summary { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-color, #e5e7eb); font-size: 0.875rem; color: var(--text-secondary, #6b7280); }
 @media (max-width: 640px) { .account-header { flex-direction: column; align-items: flex-start; } .account-info { width: 100%; justify-content: space-between; } }
 /* Profile Section */
-.profile-section { background: var(--surface-color, #ffffff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+.profile-section { border: 1px solid var(--border-color, rgba(128,128,128,0.2)); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
 .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
 .section-header h2 { font-size: 1.25rem; color: var(--text-color, #1f2937); margin: 0; }
 .btn-text { background: none; border: none; color: var(--primary-color, #ff0083); cursor: pointer; font-weight: 500; padding: 4px 8px; }
@@ -1613,7 +1614,7 @@ body.accessibility-widget-visible ._access-menu {
 .profile-form .form-group input:focus { outline: none; border-color: var(--primary-color, #ff0083); }
 .form-actions { display: flex; gap: 12px; margin-top: 8px; }
 /* Addresses Section */
-.addresses-section { background: var(--surface-color, #ffffff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+.addresses-section { border: 1px solid var(--border-color, rgba(128,128,128,0.2)); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
 .addresses-list { display: flex; flex-direction: column; gap: 12px; }
 .addresses-empty { text-align: center; padding: 32px; color: var(--text-secondary, #6b7280); }
 .address-card { background: var(--background-color, #f9fafb); border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; padding: 16px; position: relative; }
@@ -1643,6 +1644,23 @@ body.accessibility-widget-visible ._access-menu {
 .form-checkbox label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
 .form-checkbox input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary-color, #ff0083); }
 .address-modal-footer { display: flex; gap: 12px; padding: 20px 24px; border-top: 1px solid var(--border-color, #e5e7eb); justify-content: flex-end; }
+/* Favorites Section */
+.favorites-section { border: 1px solid var(--border-color, rgba(128,128,128,0.2)); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+.favorites-section h2 { font-size: 1.25rem; color: var(--text-color, #1f2937); margin-bottom: 20px; }
+.favorites-loading { text-align: center; padding: 20px; color: var(--text-secondary, #6b7280); }
+.favorites-empty { text-align: center; padding: 32px; color: var(--text-secondary, #6b7280); }
+.favorites-empty p { margin-bottom: 16px; }
+.favorites-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.favorite-card { background: transparent; border: 1px solid var(--border-color, rgba(128,128,128,0.2)); border-radius: 10px; overflow: hidden; transition: box-shadow 0.2s; position: relative; }
+.favorite-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.favorite-card-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.favorite-card-body { padding: 12px; }
+.favorite-card-body h4 { margin: 0 0 6px; font-size: 0.875rem; color: var(--text-color, #1f2937); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.favorite-card-body .favorite-price { font-weight: 600; color: var(--primary-color, #ff0083); font-size: 0.875rem; }
+.favorite-card a { text-decoration: none; color: inherit; display: block; }
+.favorite-remove-btn { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 50%; border: none; background: rgba(255,255,255,0.9); color: #dc2626; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.favorite-remove-btn:hover { background: #dc2626; color: white; }
+@media (max-width: 480px) { .favorites-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
 /* Toast Notifications */
 .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--text-color, #1f2937); color: white; padding: 12px 24px; border-radius: 8px; font-size: 0.875rem; z-index: 1001; opacity: 0; transition: opacity 0.3s; }
 .toast.show { opacity: 1; }
@@ -1692,6 +1710,7 @@ body.accessibility-widget-visible ._access-menu {
 .product-gallery-thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 2px solid transparent; cursor: pointer; transition: border-color 0.2s; }
 .product-gallery-thumb:hover, .product-gallery-thumb.active { border-color: var(--primary-color, #ff0083); }
 .product-info { display: flex; flex-direction: column; gap: 20px; }
+.product-info .product-brand { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary, #6b7280); margin-top: -12px; }
 .product-info h1 { font-size: 2rem; color: var(--text-color, #1f2937); margin: 0; line-height: 1.2; }
 .product-info .product-price { font-size: 2rem; font-weight: 700; color: var(--primary-color, #ff0083); }
 .product-info .product-price .original-price { font-size: 1.2rem; color: var(--text-secondary, #6b7280); text-decoration: line-through; margin-left: 12px; }
@@ -1724,6 +1743,14 @@ body.accessibility-widget-visible ._access-menu {
 .price-per-unit { font-size: 0.8em; color: var(--text-muted, #6b7280); font-weight: 400; }
 .price-per-unit-info { font-size: 12px; color: var(--text-muted, #6b7280); margin-top: 2px; }
 .product-card .price-per-unit-info { font-size: 11px; margin-top: 1px; }
+.product-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; width: 100%; }
+.product-title-row h1 { flex: 1; min-width: 0; }
+.product-icon-actions { display: flex; gap: 8px; flex-shrink: 0; padding-top: 6px; }
+.icon-btn { width: 36px; height: 36px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.2s; color: currentColor; padding: 0; }
+.icon-btn:hover { color: var(--primary-color, #ff0083); }
+.icon-btn.active { color: #e74c3c; }
+.icon-btn.active .heart-outline { display: none !important; }
+.icon-btn.active .heart-filled { display: block !important; }
 .product-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .product-actions .add-to-cart { flex: 1; min-width: 200px; padding: 16px 32px; font-size: 1rem; }
 /* Sticky add-to-cart row on product details page - stays in place while scrolling */
@@ -2292,8 +2319,14 @@ body {
 .featured-grid {
   max-width: 1440px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   justify-content: center;
+}
+@media (max-width: 768px) {
+  .featured-grid,
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 .view-all-products {
   text-align: center;
@@ -2829,11 +2862,24 @@ body[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
   display: grid !important;
   grid-template-columns: var(--zappy-grid-cols, repeat(2, minmax(0, 1fr))) !important;
 }
+/* Carousel mode overrides grid display to allow flex-based track layout */
+.zappy-carousel-mode,
+[data-zappy-display-mode="carousel"] {
+  display: block !important;
+}
 
-/* ZOOM WRAPPER: Ensure overflow:hidden for crop zoom effect */
+/* ZOOM WRAPPER: Ensure overflow:hidden and position:relative for crop zoom effect */
 /* The wrapper clips the oversized image to create the zoom/crop effect */
+/* position:relative is needed so absolutely positioned images stay within the wrapper */
 [data-zappy-zoom-wrapper="true"] {
   overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Prevent inserted elements from exceeding their container width */
+.zappy-inserted-element {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 @media (max-width: 768px) {
@@ -2842,6 +2888,27 @@ body[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
   [data-zappy-auto-grid="true"] {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
+  }
+  
+  /* Grid children: override min-width:auto so children with fixed-width
+     content (e.g. zoom wrappers with width:448px!important) can shrink
+     to fit the 1fr column instead of overflowing the grid container. */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > *,
+  [data-zappy-auto-grid="true"] > *,
+  [data-zappy-explicit-columns="true"] > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Featured/product grids - force single column on mobile */
+  .featured-grid,
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Neutralize centering transforms on mobile */
+  [data-zappy-center-transform] {
+    transform: none !important;
   }
   
   /* Media-only grid items - constrain height on mobile */
@@ -2925,6 +2992,67 @@ body[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
     bottom: auto !important;
   }
   
+  /* Carousel: ensure block display on mobile */
+  .zappy-carousel-mode,
+  [data-zappy-display-mode="carousel"] {
+    display: block !important;
+  }
+  /* JS-initialized carousel: constrain wrapper on mobile */
+  .zappy-carousel-js-init .zappy-carousel-container-wrapper {
+    max-width: calc(100% - 20px) !important;
+  }
+  .zappy-carousel-js-init .zappy-carousel-item {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  /* CSS-only fallback: if JS didn't initialize, stack items vertically */
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-container-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-track {
+    flex-direction: column !important;
+    transform: none !important;
+    gap: 1.5rem !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) > :not(style):not(script):not(.zappy-carousel-btn):not(.zappy-carousel-dots):not(.zappy-carousel-container-wrapper) {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-btn,
+  .zappy-carousel-mode:not(.zappy-carousel-js-init) .zappy-carousel-dots {
+    display: none !important;
+  }
+  /* Carousel items: fix zoom wrapper padding creating excess spacing */
+  .zappy-carousel-item [data-zappy-zoom-wrapper="true"],
+  .zappy-carousel-mode > div [data-zappy-zoom-wrapper="true"] {
+    padding-bottom: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+  /* Carousel buttons: position inside the card area on mobile */
+  .zappy-carousel-js-init > .zappy-carousel-btn {
+    left: 4px !important;
+    right: auto !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+    background: rgba(255,255,255,0.9) !important;
+  }
+  .zappy-carousel-js-init > .zappy-carousel-btn.zappy-carousel-right {
+    left: auto !important;
+    right: 4px !important;
+  }
+  
   /* ========== MAIN PADDING FIX ========== */
   /* Fix double-padding from old V2 mobile CSS that applied padding to both main and sections */
   /* Exclude ecommerce-page which needs its own horizontal padding for proper mobile layout */
@@ -2947,14 +3075,25 @@ body[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
     padding-top: 100px !important;
   }
   
+  /* ========== HERO CONTAINER FULL-WIDTH (FULLSCREEN HEROES ONLY) ========== */
+  /* Only strip container padding/width for heroes with actual background images.
+     Text-only and side-by-side hero sections on inner pages need normal padding. */
   .hero-container,
-  section[class*="hero"] > .container {
+  /* V2 generation-time fullscreen heroes */
+  section[data-hero-type="fullscreen-scrim"] > .container,
+  section[data-hero-type="fullscreen-card"] > .container,
+  /* Editor-applied background images on hero sections */
+  section[class*="hero"][data-zappy-bg-type="image"] > .container,
+  section[class*="hero"][data-zappy-bg-type="video"] > .container,
+  /* V1 fallback: hero sections with known bg structures */
+  section[class*="hero"]:has(.hero-bg-container) > .container,
+  section[class*="hero"]:has([data-hero-bg]) > .container {
     width: 100% !important;
     max-width: 100% !important;
   }
   
   /* ========== HERO WIDTH FIX ========== */
-  /* Remove nested horizontal padding - only section should have horizontal padding */
+  /* Remove nested horizontal padding for fullscreen-type heroes only */
   .home-Hero-section .hero-container,
   .home-Hero-section .hero-content,
   .home-Hero-section .hero-metrics,
@@ -2962,9 +3101,27 @@ body[dir="rtl"] .zappy-catalog-menu .catalog-menu-categories,
   .home-Hero-section .hero-image-frame,
   .home-Hero-section .container,
   .home-Hero-section .wrapper,
-  section[class*="hero"] .hero-container,
-  section[class*="hero"] .hero-content,
-  section[class*="hero"] .container {
+  /* V2 fullscreen heroes */
+  section[data-hero-type="fullscreen-scrim"] .hero-container,
+  section[data-hero-type="fullscreen-scrim"] .hero-content,
+  section[data-hero-type="fullscreen-scrim"] .container,
+  section[data-hero-type="fullscreen-card"] .hero-container,
+  section[data-hero-type="fullscreen-card"] .hero-content,
+  section[data-hero-type="fullscreen-card"] .container,
+  /* Editor-applied background images on hero sections */
+  section[class*="hero"][data-zappy-bg-type="image"] .hero-container,
+  section[class*="hero"][data-zappy-bg-type="image"] .hero-content,
+  section[class*="hero"][data-zappy-bg-type="image"] .container,
+  section[class*="hero"][data-zappy-bg-type="video"] .hero-container,
+  section[class*="hero"][data-zappy-bg-type="video"] .hero-content,
+  section[class*="hero"][data-zappy-bg-type="video"] .container,
+  /* V1 fallback: hero sections with known bg structures */
+  section[class*="hero"]:has(.hero-bg-container) .hero-container,
+  section[class*="hero"]:has(.hero-bg-container) .hero-content,
+  section[class*="hero"]:has(.hero-bg-container) .container,
+  section[class*="hero"]:has([data-hero-bg]) .hero-container,
+  section[class*="hero"]:has([data-hero-bg]) .hero-content,
+  section[class*="hero"]:has([data-hero-bg]) .container {
     padding-left: 0 !important;
     padding-right: 0 !important;
     padding-inline-start: 0 !important;
